@@ -10,17 +10,18 @@ const generateToken = (data) => {
 module.exports = {
   verifyToken: (req, res, next) => {
     let token = req.headers["authorization"];
-    token = token && token.split("")[1];
+    console.log(token);
+    token = token && token.split(" ")[1];
     if (!token) {
-      return res.sendStatus(403);
+      return res.status(403).send("Token Not Found");
     } else {
       jwt.verify(token, config.jwtSecret, (err, data) => {
+        console.log(err, data);
         if (err) {
-          return res.sendStatus(403);
+          return res.status(403).send("Token Not Valid");
         }
         req.user = data;
         next();
-        console.log(hah);
       });
     }
   },
