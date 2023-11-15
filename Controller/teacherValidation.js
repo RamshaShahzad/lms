@@ -6,6 +6,7 @@ module.exports = {
     experience: Joi.string(),
     department: Joi.string(),
     userId: Joi.number().required(),
+    courseId: Joi.number().optional(),
   }),
   deleteTeacher: Joi.object().keys({
     id: Joi.number().required(),

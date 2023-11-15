@@ -6,7 +6,15 @@ module.exports = {
     return teacher;
   },
   addTeacher: async (data) => {
-    const teacher = await models.teacher.create(data);
+    const { courseId, ...teacherData } = data;
+    const teacher = await models.teacher.create(teacherData);
+    await teacher.addCourse(courseId);
+    return teacher;
+  },
+  getTeacherCourse: async (id) => {
+    const teacher = await models.teacher.findOne(id, {
+      include: models.Course,
+    });
     return teacher;
   },
 

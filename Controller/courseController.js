@@ -40,7 +40,7 @@ module.exports = {
         return res.status(400).send(error.details[0].message); // 400 Bad Request
       }
 
-      const updatedCourseData = await courseServiceService.updateCourse({
+      const updatedCourseData = await courseService.updateCourse({
         ...value,
         courseId,
       });
