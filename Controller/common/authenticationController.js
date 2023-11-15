@@ -20,6 +20,7 @@ module.exports = {
         }
         req.user = data;
         next();
+        console.log(hah);
       });
     }
   },
