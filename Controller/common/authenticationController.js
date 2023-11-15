@@ -20,6 +20,7 @@ module.exports = {
         }
         req.user = data;
         next();
+        console.log(hah);
       });
     }
   },
@@ -33,7 +34,7 @@ module.exports = {
       token.push(token);
       return res.json({ Token: Token });
     } else {
-      return res.send("Wrong Vredentials");
+      return res.send("Wrong Credentials");
     }
   },
 };
