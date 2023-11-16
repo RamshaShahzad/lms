@@ -2,7 +2,6 @@ const Joi = require("joi");
 
 module.exports = {
   addCourse: Joi.object().keys({
-    id: Joi.number(),
     courseName: Joi.string(),
     creditHours: Joi.string(),
   }),

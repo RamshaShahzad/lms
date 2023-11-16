@@ -1,5 +1,4 @@
 const studentService = require("../Service/studentService");
-const studentSchema = require("../models/schemas/studentSchema");
 const studentValidation = require("./studentValidation");
 
 module.exports = {

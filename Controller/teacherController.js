@@ -1,5 +1,4 @@
 const teacherService = require("../Service/teacherService");
-const teacherScheme = require("../models/schemas/teacherSchema");
 const teacherValidation = require("./teacherValidation");
 
 module.exports = {

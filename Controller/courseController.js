@@ -1,5 +1,4 @@
 const courseService = require("../Service/courseService");
-const courseSchema = require("../models/schemas/courseSchema");
 const courseValidation = require("./courseValidation");
 
 module.exports = {
@@ -16,6 +15,7 @@ module.exports = {
       }
       const data = req.body;
       const newCourse = await courseService.addCourse(data);
+      console.log(newCourse);
       console.log(newCourse);
       if (newCourse) {
         return res.status(201).send(newCourse);
