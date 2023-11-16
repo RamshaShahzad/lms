@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../../common/dbconnection");
-const course = sequelize.define(
-  "course",
+const Course = sequelize.define(
+  "Course",
   {
     id: { primaryKey: true, autoIncrement: true, type: DataTypes.INTEGER },
 
@@ -19,4 +19,4 @@ const course = sequelize.define(
     paranoid: true,
   }
 );
-module.exports = course;
+module.exports = Course;

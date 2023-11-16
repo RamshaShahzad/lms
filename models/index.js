@@ -6,21 +6,21 @@ const sequelize = require("../common/dbconnection");
 
 user.hasOne(teacher, {
   onDelete: "CASCADE",
-  // foreignKey: { name: "userID", allowNull: false, unique: true },
+  foreignKey: { name: "userID", allowNull: false, unique: true },
 });
 teacher.belongsTo(user, {
   onDelete: "CASCADE",
-  // foreignKey: { name: "userID", allowNull: false, unique: true },
+  foreignKey: { name: "userID", allowNull: false, unique: true },
 });
 
 user.hasOne(student, {
   onDelete: "CASCADE",
-  // foreignKey: { name: "userID", allowNull: false, unique: true },
+  foreignKey: { name: "userID", allowNull: false, unique: true },
 });
 
 student.belongsTo(user, {
   onDelete: "CASCADE",
-  // foreignKey: { name: "userID", allowNull: false, unique: true },
+  foreignKey: { name: "userID", allowNull: false, unique: true },
 });
 
 student.belongsToMany(course, {

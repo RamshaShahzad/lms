@@ -2,11 +2,11 @@ const { models } = require("../models/index");
 
 module.exports = {
   getCourse: async () => {
-    const course = await models.course.findAll();
+    const course = await models.Course.findAll();
     return course;
   },
   addCourse: async (data) => {
-    const course = await models.course.create(data);
+    const course = await models.Course.create(data);
     return course;
   },
 
@@ -18,7 +18,7 @@ module.exports = {
     const { id, ...param } = body;
 
     try {
-      const result = await models.course.update(
+      const result = await models.Course.update(
         { ...param },
         {
           where: {
@@ -38,7 +38,7 @@ module.exports = {
   },
 
   deleteCourse: async (query) => {
-    const result = await models.course.destroy({
+    const result = await models.Course.destroy({
       where: {
         id: query,
       },

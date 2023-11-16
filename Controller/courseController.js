@@ -1,5 +1,4 @@
 const courseService = require("../Service/courseService");
-const courseSchema = require("../models/schemas/courseSchema");
 const courseValidation = require("./courseValidation");
 
 module.exports = {
@@ -16,6 +15,7 @@ module.exports = {
       }
       const data = req.body;
       const newCourse = await courseService.addCourse(data);
+      console.log(newCourse);
       console.log(newCourse);
       if (newCourse) {
         return res.status(201).send(newCourse);
@@ -40,7 +40,7 @@ module.exports = {
         return res.status(400).send(error.details[0].message); // 400 Bad Request
       }
 
-      const updatedCourseData = await courseServiceService.updateCourse({
+      const updatedCourseData = await courseService.updateCourse({
         ...value,
         courseId,
       });

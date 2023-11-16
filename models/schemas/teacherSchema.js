@@ -7,7 +7,7 @@ const teacher = sequelize.define(
     id: {
       primaryKey: true,
       autoIncrement: true,
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     experience: {
       allowNull: false,

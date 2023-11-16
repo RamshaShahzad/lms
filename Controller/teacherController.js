@@ -1,5 +1,4 @@
 const teacherService = require("../Service/teacherService");
-const teacherScheme = require("../models/schemas/teacherSchema");
 const teacherValidation = require("./teacherValidation");
 
 module.exports = {
@@ -26,26 +25,17 @@ module.exports = {
     }
   },
 
-  //   registerTeacher: async (req,res)=>{
-  //     try {
-  //       const { error, value } = teacherValidation.registerTeacher.validate(teacherId,courseId);
-  //       console.log(error);
-  //       if (error) {
-  //         return res.send(error.details[0].message);
-  //       }
-  //     const teacherid = teacherId;
-  //     const courseid =courseId;
-  //     const newTeacher = await teacherService.registerTeacher(data);
-  //     if (newTeacher) {
-  //       return res.status(201).send(newTeacher);
-  //     } else {
-  //       return res.status(500).send("Teacher creation failed");
-  //     }
-  //   } catch (err) {
-  //     return res.status(500).send(err.message); // Internal Server Error
-  //   }
-  // },
-
+  getTeacherCourse: async (req, res) => {
+    try {
+      const teacherid = req.params.id;
+      const updatedTeacherData = await teacherService.getTeacherCourse({
+        id: teacherid,
+      });
+      res.send(updatedTeacherData);
+    } catch (e) {
+      console.log(e);
+    }
+  },
   updateTeacher: async (req, res) => {
     try {
       const teacherId = req.params.id;
